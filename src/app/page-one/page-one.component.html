@@ -1,0 +1,16 @@
+<div [style.maxHeight]="settings.maxHeight+'px'" style="overflow: auto; margin: 50px; border: 1px solid;">
+    <ul virtualScroller #scroll [enableUnequalChildrenSizes]="true" [items]="virtualdata" (vsStart)="onScrollEnd($event)"
+    (vsEnd)="onScrollEnd($event)" style="margin: 0px" [ngStyle]="{'height': settings.maxHeight+'px'}" class="lazyContainer">
+        <li *ngFor="let item of scroll.viewPortItems; let i = index;" style="height: 40px; padding-top: 10px; border: 1px solid coral;" >
+            <label>{{item.company}}</label> <label>{{item.email}}</label>
+        </li>
+    </ul>
+</div>
+
+
+
+
+
+<div style="margin-top: 20px; border: 1px solid;">
+    <app-scroller-one [items]="items" rowHeight="40"></app-scroller-one>
+</div>
